@@ -20,6 +20,9 @@
       metaFound: 'Version {v} · {size} · 64-bit installer',
       metaFallback: 'Opens the latest release on GitHub',
       req1: 'Windows 10 or 11, 64-bit', req2: 'Vuo app on an Android phone',
+      onPhone: 'The Windows app installs on your PC. Open this page on your computer to download it.',
+      afterH: 'Download started.', afterP: 'Open Vuo-Setup when it finishes. If Windows says it protected your PC, select More info, then Run anyway.',
+      afterLink: 'Installation help',
       shotsH: 'A look at the phone app', shotsP: 'Screens from the Vuo Android app connected to a Windows PC.',
       alt1: 'Using the PC from the phone', alt2: 'Window switcher with monitors and open windows',
       alt3: 'Game mode with an on-screen gamepad', alt4: 'PC keyboard with navigation keys and shortcuts',
@@ -70,6 +73,9 @@
       metaFound: 'Sürüm {v} · {size} · 64 bit kurulum dosyası',
       metaFallback: "GitHub'daki son sürüm sayfasını açar",
       req1: 'Windows 10 veya 11, 64 bit', req2: 'Android telefonda Vuo uygulaması',
+      onPhone: 'Windows uygulaması bilgisayara kurulur. İndirmek için bu sayfayı bilgisayarınızda açın.',
+      afterH: 'İndirme başladı.', afterP: "Bittiğinde Vuo-Setup'ı açın. Windows bilgisayarınızı koruduğunu söylerse Ek bilgi'yi, ardından Yine de çalıştır'ı seçin.",
+      afterLink: 'Kurulum yardımı',
       shotsH: 'Telefon uygulamasına bir bakış', shotsP: 'Bir Windows bilgisayara bağlı Vuo Android uygulamasından ekranlar.',
       alt1: 'Bilgisayarı telefondan kullanma', alt2: 'Monitörler ve açık pencerelerle pencere geçişi',
       alt3: 'Ekran kumandalı oyun modu', alt4: 'Gezinme tuşları ve kısayollarla PC klavyesi',
@@ -191,6 +197,22 @@
   });
 
   apply(lang);
+
+  // A phone visitor gets the Play Store first; the installer stays one tap away.
+  var ua = navigator.userAgent || '';
+  if (/Android/i.test(ua)) {
+    document.documentElement.classList.add('is-phone');
+    var phoneNote = document.querySelector('.on-phone');
+    if (phoneNote) phoneNote.hidden = false;
+  }
+
+  // After a click on a download link: what to expect next (SmartScreen).
+  document.querySelectorAll('.dl-link').forEach(function (a) {
+    a.addEventListener('click', function () {
+      var box = document.querySelector('.after-dl');
+      if (box && !document.documentElement.classList.contains('is-phone')) box.hidden = false;
+    });
+  });
 
   // Latest release -> direct installer link. Any failure keeps the GitHub fallback link.
   var ctrl = typeof AbortController !== 'undefined' ? new AbortController() : null;

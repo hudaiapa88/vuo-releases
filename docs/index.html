@@ -29,7 +29,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="assets/style.css">
 <link rel="preconnect" href="https://api.github.com" crossorigin>
 
@@ -78,7 +78,6 @@
   <section class="hero" id="top">
     <div class="wrap">
       <div>
-        <span class="eyebrow" data-i18n="eyebrow">PC app for Windows 10 / 11</span>
         <h1><span data-i18n="h1a">Control your Windows PC</span> <span class="hl" data-i18n="h1b">from your phone</span></h1>
         <p class="lead" data-i18n="lead">Vuo shows your PC screen on your Android phone with low latency. Use touch, mouse and a full PC keyboard, switch windows and monitors, and play with a gamepad - on the same Wi-Fi or over the internet.</p>
         <div class="cta">
@@ -86,12 +85,17 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
             <span data-i18n="download">Download for Windows</span>
           </a>
-          <a class="btn btn-ghost" href="https://play.google.com/store/apps/details?id=com.vuoremote.app" rel="noopener">
+          <p class="dl-meta" id="dl-meta" aria-live="polite" data-i18n="metaLoading">Checking the latest version...</p>
+          <a class="btn btn-ghost play-link" href="https://play.google.com/store/apps/details?id=com.vuoremote.app" rel="noopener">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18h2"/></svg>
             <span data-i18n="getAndroid">Android app on Google Play</span>
           </a>
         </div>
-        <p class="dl-meta" id="dl-meta" aria-live="polite" data-i18n="metaLoading">Checking the latest version...</p>
+        <p class="on-phone" data-i18n="onPhone" hidden>The Windows app installs on your PC. Open this page on your computer to download it.</p>
+        <div class="after-dl" role="status" hidden>
+          <p><strong data-i18n="afterH">Download started.</strong> <span data-i18n="afterP">Open Vuo-Setup when it finishes. If Windows says it protected your PC, select More info, then Run anyway.</span></p>
+          <a href="#install" data-i18n="afterLink">Installation help</a>
+        </div>
         <ul class="reqs">
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg><span data-i18n="req1">Windows 10 or 11, 64-bit</span></li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg><span data-i18n="req2">Vuo app on an Android phone</span></li>
@@ -131,53 +135,53 @@
       <div class="section-head">
         <h2 id="feat-h" data-i18n="featH">What you can do</h2>
       </div>
-      <div class="grid">
-        <article class="card">
-          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+      <ul class="features">
+        <li>
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg></span>
           <h3 data-i18n="f1h">Low-latency picture</h3>
           <p data-i18n="f1p">See your PC screen live on your phone, with little delay between the PC and the phone.</p>
-        </article>
-        <article class="card">
-          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 10h.01M10 10h.01M14 10h.01M18 10h.01M7 14h10"/></svg></div>
+        </li>
+        <li>
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 10h.01M10 10h.01M14 10h.01M18 10h.01M7 14h10"/></svg></span>
           <h3 data-i18n="f2h">Touch, mouse and full keyboard</h3>
           <p data-i18n="f2p">Tap and drag like a touchpad, use a full PC keyboard with F keys, and send shortcuts such as Alt+Tab or Ctrl+Alt+Del.</p>
-        </article>
-        <article class="card">
-          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="8" height="8" rx="1.5"/><rect x="13" y="3" width="8" height="8" rx="1.5"/><rect x="3" y="13" width="8" height="8" rx="1.5"/><rect x="13" y="13" width="8" height="8" rx="1.5"/></svg></div>
+        </li>
+        <li>
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="8" height="8" rx="1.5"/><rect x="13" y="3" width="8" height="8" rx="1.5"/><rect x="3" y="13" width="8" height="8" rx="1.5"/><rect x="13" y="13" width="8" height="8" rx="1.5"/></svg></span>
           <h3 data-i18n="f3h">Window switcher</h3>
           <p data-i18n="f3p">See the open windows on your PC and jump to the one you need.</p>
-        </article>
-        <article class="card">
-          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1.5" y="5" width="11" height="8" rx="1.5"/><rect x="11.5" y="9" width="11" height="8" rx="1.5"/><path d="M5 19h5M15 21h4"/></svg></div>
+        </li>
+        <li>
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1.5" y="5" width="11" height="8" rx="1.5"/><rect x="11.5" y="9" width="11" height="8" rx="1.5"/><path d="M5 19h5M15 21h4"/></svg></span>
           <h3 data-i18n="f4h">Monitor switching</h3>
           <p data-i18n="f4p">Have more than one monitor? Choose which one you see on the phone.</p>
-        </article>
-        <article class="card">
-          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M3 8V4h4M21 8V4h-4M3 16v4h4M21 16v4h-4"/></svg></div>
+        </li>
+        <li>
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M3 8V4h4M21 8V4h-4M3 16v4h4M21 16v4h-4"/></svg></span>
           <h3 data-i18n="f5h">Fit to phone</h3>
           <p data-i18n="f5p">A monitor's windows are reshaped to fit the phone screen, and go back when you turn it off.</p>
-        </article>
-        <article class="card">
-          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v4"/></svg></div>
+        </li>
+        <li>
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v4"/></svg></span>
           <h3 data-i18n="f6h">Phone microphone to PC</h3>
           <p data-i18n="f6p">Use your phone as the PC's microphone. Optional; needs the free VB-CABLE virtual audio device on the PC.</p>
-        </article>
-        <article class="card">
-          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8h12a4 4 0 0 1 4 4v2a3 3 0 0 1-5.4 1.8L15 14H9l-1.6 1.8A3 3 0 0 1 2 14v-2a4 4 0 0 1 4-4Z"/><path d="M7 11v2M6 12h2M16 11h.01M18 13h.01"/></svg></div>
+        </li>
+        <li>
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8h12a4 4 0 0 1 4 4v2a3 3 0 0 1-5.4 1.8L15 14H9l-1.6 1.8A3 3 0 0 1 2 14v-2a4 4 0 0 1 4-4Z"/><path d="M7 11v2M6 12h2M16 11h.01M18 13h.01"/></svg></span>
           <h3 data-i18n="f7h">Game mode</h3>
           <p data-i18n="f7p">Play with an on-screen gamepad or a Bluetooth controller paired to your phone. The PC sees a virtual Xbox 360 controller.</p>
-        </article>
-        <article class="card">
-          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a15 15 0 0 1 20 0M5 12.5a10 10 0 0 1 14 0M8.5 16a5 5 0 0 1 7 0"/><path d="M12 20h.01"/></svg></div>
+        </li>
+        <li>
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a15 15 0 0 1 20 0M5 12.5a10 10 0 0 1 14 0M8.5 16a5 5 0 0 1 7 0"/><path d="M12 20h.01"/></svg></span>
           <h3 data-i18n="f8h">Code, QR or same Wi-Fi</h3>
           <p data-i18n="f8p">Connect with a 9-digit code or a QR code, or pick your PC from the list on the same Wi-Fi. Works over the internet too.</p>
-        </article>
-        <article class="card">
-          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4 6v6c0 4.5 3.4 8.3 8 9 4.6-.7 8-4.5 8-9V6l-8-3Z"/><path d="m9 12 2 2 4-4"/></svg></div>
+        </li>
+        <li>
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4 6v6c0 4.5 3.4 8.3 8 9 4.6-.7 8-4.5 8-9V6l-8-3Z"/><path d="m9 12 2 2 4-4"/></svg></span>
           <h3 data-i18n="f9h">You approve every new phone</h3>
           <p data-i18n="f9p">The first time a phone tries to connect, the PC asks you. Nothing connects until you allow it.</p>
-        </article>
-      </div>
+        </li>
+      </ul>
     </div>
   </section>
 
